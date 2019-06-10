@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { Connector, subscribe } from 'mqtt-react';
 
-export default App;
+export default () => (
+  <Connector mqttProps="ws://localhost:8080">
+    <Messages />
+  </Connector>
+);
+
+// Messages are passed on the "data" prop
+const MessageList = props => {
+  console.log(props);
+  return (
+    <ul key={props.data}>
+      {props.data.map(message => (
+        <li>{message.temperatura}</li>
+      ))}
+    </ul>
+  );
+};
+
+const Messages = subscribe({
+  topic: 'sensors'
+})(MessageList);
