@@ -8,11 +8,14 @@ class Empresa extends Component {
   render() {
     return (
       <div className="pessoas">
-        <h1>OLÁ, PESSOAS COMUNS.</h1>
+        <h1>
+          OLÁ, <strong>CIVIS</strong>.
+        </h1>
+
         {this.props.items.map(i => {
           return (
             <div className="pessoas__item">
-              <span>{moment(i.data).format('DD/MM/YYYY | HH:mm:ss')}</span>
+              <span>{moment(i.data).format('DD/MM/YYYY - HH:mm:ss')}</span>
               <h2>{i.message}</h2>
             </div>
           );

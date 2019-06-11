@@ -17,20 +17,24 @@ class DefesaCivil extends Component {
 
   notifyCompany = () => {
     this.props.notifyCompany(this.state.message);
+    this.setState({ message: '' });
   };
 
   notifyPessoas = () => {
     this.props.notifyPessoas(this.state.messagePessoasComuns);
+    this.setState({ messagePessoasComuns: '' });
   };
 
   render() {
     return (
       <div className="defesa">
-        <h1>BEM VINDO, DEFESA CIVIL.</h1>
+        <h1>
+          BEM VINDO, <strong>DEFESA CIVIL</strong>
+        </h1>
         <div className="defesa__notify-item__button-container">
           <input type="text" value={this.state.message} onChange={e => this.setState({ message: e.target.value })} />
           <div className="defesa__notify-item__button" onClick={this.notifyCompany}>
-            AVISAR EMPRESA!
+            AVISAR ÓRGÃOS CORPORATIVOS
           </div>
         </div>
 
@@ -41,7 +45,7 @@ class DefesaCivil extends Component {
             onChange={e => this.setState({ messagePessoasComuns: e.target.value })}
           />
           <div className="defesa__notify-item__button pessoas-comuns" onClick={this.notifyPessoas}>
-            AVISAR PESSOAS COMUNS!
+            AVISAR CIVIS
           </div>
         </div>
 
@@ -51,7 +55,7 @@ class DefesaCivil extends Component {
           {this.props.messages.map(message => (
             <div class="defesa__notify-item">
               <span>
-                <strong>{`${message.temperatura}ºc e ${message.mq135}`}</strong>
+                <strong>{`TEMPERATURA: ${message.temperatura}ºc e GÁS: ${message.mq135}`}</strong>
               </span>
               <div className="defesa__notify-item__time">24/05/1997 - 12:30</div>
             </div>

@@ -1,6 +1,6 @@
 html,
 body {
-  background-color: rgba(228, 228, 228, 0.4);
+  background-color: rgba(228, 228, 228, 0.2);
   font-family: 'Roboto';
 }
 
@@ -31,14 +31,9 @@ h1 {
       margin-bottom: 48px;
 
       img {
+        cursor: pointer;
         width: 100px;
         height: 100px;
-        filter: hue-rotate(180deg);
-        transition: 1s;
-
-        &:hover {
-          filter: none;
-        }
       }
     }
 
@@ -59,6 +54,10 @@ h1 {
       }
 
       span {
+        color: #333;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 600;
         margin-left: 10px;
       }
 

@@ -9,11 +9,13 @@ class Empresa extends Component {
   render() {
     return (
       <div className="empresa">
-        <h1>OLÁ, Empresa.</h1>
+        <h1>
+          OLÁ, <strong>ORGÃO CORPORATIVO</strong>.
+        </h1>
         {this.props.items.map(i => {
           return (
             <div className="empresa__item">
-              <span>{moment(i.data).format('DD/MM/YYYY | HH:mm:ss')}</span>
+              <span>{moment(i.data).format('DD/MM/YYYY - HH:mm:ss')}</span>
               <h2>{i.message}</h2>
             </div>
           );
