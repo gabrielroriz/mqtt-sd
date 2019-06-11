@@ -1,0 +1,80 @@
+html,
+body {
+  background-color: rgba(228, 228, 228, 0.4);
+  font-family: 'Roboto';
+}
+
+h1 {
+  font-family: 'Arial';
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+
+  &__drawer {
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    padding: 70px 0px 10px 0px;
+
+    #logo-unifei {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 48px;
+
+      img {
+        width: 100px;
+        height: 100px;
+        filter: hue-rotate(180deg);
+        transition: 1s;
+
+        &:hover {
+          filter: none;
+        }
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      padding: 12px;
+
+      &:hover {
+        background-color: #eee;
+
+        span {
+          color: #07497c;
+        }
+      }
+
+      span {
+        margin-left: 10px;
+      }
+
+      img {
+        width: 30px;
+        padding: 4px;
+      }
+    }
+  }
+
+  &__content {
+    padding-left: 250px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+  }
+}

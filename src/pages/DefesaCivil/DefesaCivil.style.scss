@@ -1,0 +1,74 @@
+.defesa {
+  #anormalidade-label {
+    margin-top: 80px;
+    font-weight: 600;
+  }
+
+  #empty {
+    text-align: center;
+    font-weight: 600;
+    color: green;
+  }
+
+  &__notify-item {
+    &__button-container {
+      &.pessoas-comuns {
+        margin-top: 45px;
+      }
+
+      input {
+        border: 2px solid #456879;
+        border-radius: 10px;
+        height: 35px;
+        width: 100%;
+        font-size: 2rem;
+      }
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    margin-top: 15px;
+    background-color: #d42c2a;
+    width: 50%;
+    padding: 10px 16px;
+    border-radius: 16px;
+    text-align: center;
+
+    span {
+      color: white;
+      font-size: 1rem;
+      text-align: center;
+      margin-right: 12px;
+    }
+
+    &__time {
+      // background-color: black;
+      margin-top: 5px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: white;
+    }
+
+    &__button {
+      cursor: pointer;
+      background-color: #2a57d4;
+      color: white;
+      font-weight: 800;
+      padding: 8px;
+      display: flex;
+      justify-content: center;
+      margin: 8px 0px;
+      border-radius: 16px;
+      box-shadow: 0 11px 11px rgba(0, 0, 0, 0.2);
+
+      &.pessoas-comuns {
+        background-color: #ff5000;
+        color: white;
+      }
+    }
+  }
+}
